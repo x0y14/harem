@@ -1,0 +1,17 @@
+﻿can_be_odalisque_trigger = {
+	is_female = yes
+	is_capable_adult = yes
+	# is_imprisoned = no
+	is_at_war_with_liege = no
+	# A Caravan Master will travel around, which is not compatible with council tasks
+	NOT = { has_court_position = travel_leader_court_position }
+	trigger_if = {
+		limit = { has_variable = block_hire_councillor }
+		NOT = { var:block_hire_councillor = liege }
+	}
+	is_landed = no
+	OR = {
+		is_married = no
+		is_imprisoned = yes
+	}
+}

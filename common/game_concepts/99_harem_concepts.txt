@@ -1,0 +1,26 @@
+﻿harem = {
+}
+
+# ハレムの女奴隷
+odalisque = {
+	texture = "gfx/interface/icons/message_feed/spouse_job.dds"
+}
+
+# スルタンに目をつけられたオダリスク
+ikbal = {
+	texture = "gfx/interface/icons/message_feed/spouse_job.dds"
+	# alias = {spouses}
+}
+
+task_self_improvement = {
+	parent = councillor_task
+	texture = "gfx/interface/icons/council_task_types/task_self_improvement.dds"
+	alias = {
+		task_self_improvement_1
+		task_self_improvement_2
+		task_self_improvement_3
+		task_self_improvement_4
+		task_self_improvement_5
+		task_self_improvement_6
+	}
+}

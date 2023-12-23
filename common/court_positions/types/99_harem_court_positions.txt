@@ -1,0 +1,46 @@
+﻿odalisque_court_position = {
+	max_available_positions = 20
+	category = court_position_category_special
+	minimum_rank = kingdom # Should only be available for kings and emperors
+
+	opinion = {}
+
+	# aptitude_level_breakpoints = {}
+	# aptitude = {}
+
+	# Is this an available position for this court? (root is court owner)
+	valid_position = {
+		highest_held_title_tier >= tier_kingdom
+	}
+
+	is_shown_character = {
+		scope:employee = {
+			is_courtier_of = scope:liege
+			# is_imprisoned = no
+			can_be_odalisque_trigger = yes
+		}
+		# NAND = {
+		# 	has_council_position = councillor_ikbal_1
+		# 	has_council_position = councillor_ikbal_2
+		# 	has_council_position = councillor_ikbal_3
+		# 	has_council_position = councillor_ikbal_4
+		# 	has_council_position = councillor_ikbal_5
+		# 	has_council_position = councillor_ikbal_6
+		# }
+	}
+
+	# 給料等
+	revoke_cost = { gold = 0 }
+	salary = { gold = 0 }
+	base_employer_modifier = {}
+	scaling_employer_modifiers = {}
+	modifier = {}
+
+	# 全うできなくなった場合
+	on_court_position_received = {}
+	on_court_position_revoked = {}
+	on_court_position_invalidated = {}
+
+	# AI関係
+	candidate_score = { value = 50 }
+}

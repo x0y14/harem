@@ -1,0 +1,37 @@
+﻿l_english:
+  game_concept_councilor_ikbal: "Ikbal"
+  game_concept_councilor_ikbal_1: "$game_concept_councilor_ikbal$"
+  game_concept_councilor_ikbal_2: "$game_concept_councilor_ikbal$"
+  game_concept_councilor_ikbal_3: "$game_concept_councilor_ikbal$"
+  game_concept_councilor_ikbal_4: "$game_concept_councilor_ikbal$"
+  game_concept_councilor_ikbal_5: "$game_concept_councilor_ikbal$"
+  game_concept_councilor_ikbal_6: "$game_concept_councilor_ikbal$"
+
+  councilor_ikbal: "Ikbal"
+  councilor_ikbal_1: "$councilor_ikbal$"
+  councilor_ikbal_2: "$councilor_ikbal$"
+  councilor_ikbal_3: "$councilor_ikbal$"
+  councilor_ikbal_4: "$councilor_ikbal$"
+  councilor_ikbal_5: "$councilor_ikbal$"
+  councilor_ikbal_6: "$councilor_ikbal$"
+
+  game_concept_ikbal_desc: "Ikbal DESC"
+  odalisque_court_position: "Odalisque"
+  odalisque_court_position_desc: "Odalisque DESC"
+
+  task_self_improvement: "Self-Improvement"
+  task_self_improvement_effect_desc: "Self-Improvement DESC"
+
+  task_self_improvement_1: "$task_self_improvement$"
+  task_self_improvement_1_effect_desc: "$task_self_improvement_effect_desc$"  task_self_improvement_2: "$task_self_improvement$"
+  task_self_improvement_2_effect_desc: "$task_self_improvement_effect_desc$"
+  task_self_improvement_3: "$task_self_improvement$"
+  task_self_improvement_3_effect_desc: "$task_self_improvement_effect_desc$"
+  task_self_improvement_4: "$task_self_improvement$"
+  task_self_improvement_4_effect_desc: "$task_self_improvement_effect_desc$"
+  task_self_improvement_5: "$task_self_improvement$"
+  task_self_improvement_5_effect_desc: "$task_self_improvement_effect_desc$"
+  task_self_improvement_6: "$task_self_improvement$"
+  task_self_improvement_6_effect_desc: "$task_self_improvement_effect_desc$"
+
+  COURT_POSITION_CATEGORY_HAREM_NAME: "Harem"

@@ -1,0 +1,306 @@
+﻿# 前提としてハレムの女性は以下のmodifierを持つ
+# - 生殖力増加
+# - 全てのアクティビティに参加できない(ハレムから出れない)
+# - 君主、宦官、ハレムの女性、以外と接触できない
+# - 称号を継承できない
+# - 君主の投獄行動に99%従う
+
+councillor_ikbal_1 = {
+	name = councilor_ikbal_1
+
+	auto_fill = no
+	inherit = no
+	can_fire = yes
+	can_reassign = yes
+	# can_change_once = yes
+
+	tooltip = game_concept_ikbal_desc
+
+	modifier = {
+		# 別のイクバルから狙われる
+		# ものすごいopinionを得る
+		# ものすごい毎月名声を得る
+		# ものすごい妊娠しやすくなる
+		# name = ""
+		# inheritance_blocker = all
+	}
+	council_owner_modifier = {
+		# 生殖力増加
+	}
+
+	
+
+	valid_character = {
+		# exists = root.liege_or_court_owner
+		can_be_odalisque_trigger = yes
+		has_court_position = odalisque_court_position
+		# 称号を持たない人
+		# 誰かのプライマリーheirじゃない人
+		exists = root.liege_or_court_owner
+		# can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+	}
+
+	on_get_position = {
+		# ものすごい名声を得る
+		# 他のイクバルから恨まれる
+		# 君主に対する肯定意見
+	}
+	on_fired_from_position = {
+		# 他のイクバルを恨む
+	}
+	portrait_animation = scheme
+	barbershop_data = {
+		position = { 558.0 172.0 }
+		click_to_front = no
+	}
+}
+
+councillor_ikbal_2 = {
+	name = councilor_ikbal_2
+
+	auto_fill = no
+	inherit = no
+	can_fire = yes
+	can_reassign = yes
+	# can_change_once = yes
+
+	tooltip = game_concept_ikbal_desc
+
+	modifier = {
+		# 別のイクバルから狙われる
+		# ものすごいopinionを得る
+		# ものすごい毎月名声を得る
+		# ものすごい妊娠しやすくなる
+		# name = ""
+		# inheritance_blocker = all
+	}
+	council_owner_modifier = {
+		# 生殖力増加
+	}
+
+	
+
+	valid_character = {
+		# exists = root.liege_or_court_owner
+		can_be_odalisque_trigger = yes
+		has_court_position = odalisque_court_position
+		# 称号を持たない人
+		# 誰かのプライマリーheirじゃない人
+		exists = root.liege_or_court_owner
+		# can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+	}
+
+	on_get_position = {
+		# ものすごい名声を得る
+		# 他のイクバルから恨まれる
+		# 君主に対する肯定意見
+	}
+	on_fired_from_position = {
+		# 他のイクバルを恨む
+	}
+	portrait_animation = scheme
+	barbershop_data = {
+		position = { 558.0 172.0 }
+		click_to_front = no
+	}
+}
+
+councillor_ikbal_3 = {
+	name = councilor_ikbal_3
+
+	auto_fill = no
+	inherit = no
+	can_fire = yes
+	can_reassign = yes
+	# can_change_once = yes
+
+	tooltip = game_concept_ikbal_desc
+
+	modifier = {
+		# 別のイクバルから狙われる
+		# ものすごいopinionを得る
+		# ものすごい毎月名声を得る
+		# ものすごい妊娠しやすくなる
+		# name = ""
+		# inheritance_blocker = all
+	}
+	council_owner_modifier = {
+		# 生殖力増加
+	}
+
+	
+
+	valid_character = {
+		# exists = root.liege_or_court_owner
+		can_be_odalisque_trigger = yes
+		has_court_position = odalisque_court_position
+		# 称号を持たない人
+		# 誰かのプライマリーheirじゃない人
+		exists = root.liege_or_court_owner
+		# can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+	}
+
+	on_get_position = {
+		# ものすごい名声を得る
+		# 他のイクバルから恨まれる
+		# 君主に対する肯定意見
+	}
+	on_fired_from_position = {
+		# 他のイクバルを恨む
+	}
+	portrait_animation = scheme
+	barbershop_data = {
+		position = { 558.0 172.0 }
+		click_to_front = no
+	}
+}
+
+councillor_ikbal_4 = {
+	name = councilor_ikbal_4
+
+	auto_fill = no
+	inherit = no
+	can_fire = yes
+	can_reassign = yes
+	# can_change_once = yes
+
+	tooltip = game_concept_ikbal_desc
+
+	modifier = {
+		# 別のイクバルから狙われる
+		# ものすごいopinionを得る
+		# ものすごい毎月名声を得る
+		# ものすごい妊娠しやすくなる
+		# name = ""
+		# inheritance_blocker = all
+	}
+	council_owner_modifier = {
+		# 生殖力増加
+	}
+
+	
+
+	valid_character = {
+		# exists = root.liege_or_court_owner
+		can_be_odalisque_trigger = yes
+		has_court_position = odalisque_court_position
+		# 称号を持たない人
+		# 誰かのプライマリーheirじゃない人
+		exists = root.liege_or_court_owner
+		# can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+	}
+
+	on_get_position = {
+		# ものすごい名声を得る
+		# 他のイクバルから恨まれる
+		# 君主に対する肯定意見
+	}
+	on_fired_from_position = {
+		# 他のイクバルを恨む
+	}
+	portrait_animation = scheme
+	barbershop_data = {
+		position = { 558.0 172.0 }
+		click_to_front = no
+	}
+}
+
+councillor_ikbal_5 = {
+	name = councilor_ikbal_5
+
+	auto_fill = no
+	inherit = no
+	can_fire = yes
+	can_reassign = yes
+	# can_change_once = yes
+
+	tooltip = game_concept_ikbal_desc
+
+	modifier = {
+		# 別のイクバルから狙われる
+		# ものすごいopinionを得る
+		# ものすごい毎月名声を得る
+		# ものすごい妊娠しやすくなる
+		# name = ""
+		# inheritance_blocker = all
+	}
+	council_owner_modifier = {
+		# 生殖力増加
+	}
+
+	
+
+	valid_character = {
+		# exists = root.liege_or_court_owner
+		can_be_odalisque_trigger = yes
+		has_court_position = odalisque_court_position
+		# 称号を持たない人
+		# 誰かのプライマリーheirじゃない人
+		exists = root.liege_or_court_owner
+		# can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+	}
+
+	on_get_position = {
+		# ものすごい名声を得る
+		# 他のイクバルから恨まれる
+		# 君主に対する肯定意見
+	}
+	on_fired_from_position = {
+		# 他のイクバルを恨む
+	}
+	portrait_animation = scheme
+	barbershop_data = {
+		position = { 558.0 172.0 }
+		click_to_front = no
+	}
+}
+
+councillor_ikbal_6 = {
+	name = councilor_ikbal_6
+
+	auto_fill = no
+	inherit = no
+	can_fire = yes
+	can_reassign = yes
+	# can_change_once = yes
+
+	tooltip = game_concept_ikbal_desc
+
+	modifier = {
+		# 別のイクバルから狙われる
+		# ものすごいopinionを得る
+		# ものすごい毎月名声を得る
+		# ものすごい妊娠しやすくなる
+		# name = ""
+		# inheritance_blocker = all
+	}
+	council_owner_modifier = {
+		# 生殖力増加
+	}
+
+	
+
+	valid_character = {
+		# exists = root.liege_or_court_owner
+		can_be_odalisque_trigger = yes
+		has_court_position = odalisque_court_position
+		# 称号を持たない人
+		# 誰かのプライマリーheirじゃない人
+		exists = root.liege_or_court_owner
+		# can_be_steward_trigger = { COURT_OWNER = root.liege_or_court_owner }
+	}
+
+	on_get_position = {
+		# ものすごい名声を得る
+		# 他のイクバルから恨まれる
+		# 君主に対する肯定意見
+	}
+	on_fired_from_position = {
+		# 他のイクバルを恨む
+	}
+	portrait_animation = scheme
+	barbershop_data = {
+		position = { 558.0 172.0 }
+		click_to_front = no
+	}
+}

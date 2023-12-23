@@ -1,0 +1,330 @@
+﻿task_self_improvement_1 = {
+	default_task = yes
+	position = councillor_ikbal_1
+
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	effect_desc = {
+		# Direct Vassal Opinion
+		desc = task_self_improvement_effect_desc
+	}
+
+	on_start_task = {
+		# liege = {
+		# 	set_variable = {
+		# 		name = chancellor_domestic_affairs_opinion_value
+		# 		value = 0
+		# 	}
+		# }
+	}
+
+	on_cancel_task = {
+		# if = {
+		# 	limit = {
+		# 		is_alive = yes
+		# 		has_variable = chancellor_domestic_affairs_opinion_value
+		# 	}
+		# 	remove_variable = chancellor_domestic_affairs_opinion_value
+		# }
+	}
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	direct_vassal_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_parochial_opinion_modifier
+	# 	parochial_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	tyranny_loss_mult = 0.01
+	# 	scale = chancellor_domestic_affairs_tyranny_total
+	# }
+
+	on_monthly = {}
+
+	ai_will_do = {
+		value = 100
+	}
+}
+task_self_improvement_2 = {
+	default_task = yes
+	position = councillor_ikbal_2
+
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	effect_desc = {
+		# Direct Vassal Opinion
+		desc = task_self_improvement_effect_desc
+	}
+
+	on_start_task = {
+		# liege = {
+		# 	set_variable = {
+		# 		name = chancellor_domestic_affairs_opinion_value
+		# 		value = 0
+		# 	}
+		# }
+	}
+
+	on_cancel_task = {
+		# if = {
+		# 	limit = {
+		# 		is_alive = yes
+		# 		has_variable = chancellor_domestic_affairs_opinion_value
+		# 	}
+		# 	remove_variable = chancellor_domestic_affairs_opinion_value
+		# }
+	}
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	direct_vassal_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_parochial_opinion_modifier
+	# 	parochial_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	tyranny_loss_mult = 0.01
+	# 	scale = chancellor_domestic_affairs_tyranny_total
+	# }
+
+	on_monthly = {}
+
+	ai_will_do = {
+		value = 100
+	}
+}
+task_self_improvement_3 = {
+	default_task = yes
+	position = councillor_ikbal_3
+
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	effect_desc = {
+		# Direct Vassal Opinion
+		desc = task_self_improvement_effect_desc
+	}
+
+	on_start_task = {
+		# liege = {
+		# 	set_variable = {
+		# 		name = chancellor_domestic_affairs_opinion_value
+		# 		value = 0
+		# 	}
+		# }
+	}
+
+	on_cancel_task = {
+		# if = {
+		# 	limit = {
+		# 		is_alive = yes
+		# 		has_variable = chancellor_domestic_affairs_opinion_value
+		# 	}
+		# 	remove_variable = chancellor_domestic_affairs_opinion_value
+		# }
+	}
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	direct_vassal_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_parochial_opinion_modifier
+	# 	parochial_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	tyranny_loss_mult = 0.01
+	# 	scale = chancellor_domestic_affairs_tyranny_total
+	# }
+
+	on_monthly = {}
+
+	ai_will_do = {
+		value = 100
+	}
+}
+task_self_improvement_4 = {
+	default_task = yes
+	position = councillor_ikbal_4
+
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	effect_desc = {
+		# Direct Vassal Opinion
+		desc = task_self_improvement_effect_desc
+	}
+
+	on_start_task = {
+		# liege = {
+		# 	set_variable = {
+		# 		name = chancellor_domestic_affairs_opinion_value
+		# 		value = 0
+		# 	}
+		# }
+	}
+
+	on_cancel_task = {
+		# if = {
+		# 	limit = {
+		# 		is_alive = yes
+		# 		has_variable = chancellor_domestic_affairs_opinion_value
+		# 	}
+		# 	remove_variable = chancellor_domestic_affairs_opinion_value
+		# }
+	}
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	direct_vassal_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_parochial_opinion_modifier
+	# 	parochial_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	tyranny_loss_mult = 0.01
+	# 	scale = chancellor_domestic_affairs_tyranny_total
+	# }
+
+	on_monthly = {}
+
+	ai_will_do = {
+		value = 100
+	}
+}
+task_self_improvement_5 = {
+	default_task = yes
+	position = councillor_ikbal_5
+
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	effect_desc = {
+		# Direct Vassal Opinion
+		desc = task_self_improvement_effect_desc
+	}
+
+	on_start_task = {
+		# liege = {
+		# 	set_variable = {
+		# 		name = chancellor_domestic_affairs_opinion_value
+		# 		value = 0
+		# 	}
+		# }
+	}
+
+	on_cancel_task = {
+		# if = {
+		# 	limit = {
+		# 		is_alive = yes
+		# 		has_variable = chancellor_domestic_affairs_opinion_value
+		# 	}
+		# 	remove_variable = chancellor_domestic_affairs_opinion_value
+		# }
+	}
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	direct_vassal_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_parochial_opinion_modifier
+	# 	parochial_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	tyranny_loss_mult = 0.01
+	# 	scale = chancellor_domestic_affairs_tyranny_total
+	# }
+
+	on_monthly = {}
+
+	ai_will_do = {
+		value = 100
+	}
+}
+task_self_improvement_6 = {
+	default_task = yes
+	position = councillor_ikbal_6
+
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+
+	effect_desc = {
+		# Direct Vassal Opinion
+		desc = task_self_improvement_effect_desc
+	}
+
+	on_start_task = {
+		# liege = {
+		# 	set_variable = {
+		# 		name = chancellor_domestic_affairs_opinion_value
+		# 		value = 0
+		# 	}
+		# }
+	}
+
+	on_cancel_task = {
+		# if = {
+		# 	limit = {
+		# 		is_alive = yes
+		# 		has_variable = chancellor_domestic_affairs_opinion_value
+		# 	}
+		# 	remove_variable = chancellor_domestic_affairs_opinion_value
+		# }
+	}
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	direct_vassal_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_parochial_opinion_modifier
+	# 	parochial_opinion = 1
+	# 	scale = chancellor_domestic_affairs_opinion_scale
+	# }
+
+	# council_owner_modifier = {
+	# 	name = task_domestic_affairs_opinion_modifier
+	# 	tyranny_loss_mult = 0.01
+	# 	scale = chancellor_domestic_affairs_tyranny_total
+	# }
+
+	on_monthly = {}
+
+	ai_will_do = {
+		value = 100
+	}
+}
