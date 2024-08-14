@@ -36,27 +36,25 @@
 
 	is_shown = {  }
 	is_valid_showing_failures_only = { 
-		# scope:liege = { any_concubine = { count <= 2 } }
+		scope:liege = { any_concubine = { count <= 2 } }
 		# scope:liege = { allowed_more_concubines = yes }
 	}
 
 	on_start = {
-	}
-	on_yearly = {
 		remove_trait = celibate
 		scope:liege = { make_concubine = root }
-
+	}
+	on_yearly = {
 		scope:liege = {
 			had_sex_with_effect = {
 				CHARACTER = root
 				PREGNANCY_CHANCE = pregnancy_chance
 			}
 		}
-
-		scope:liege = { remove_concubine = root }
-		add_trait = celibate
 	}
 	on_end = {
+		scope:liege = { remove_concubine = root }
+		add_trait = celibate
 	}
 
 	ai_will_do = {
