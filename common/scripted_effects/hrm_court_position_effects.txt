@@ -59,6 +59,14 @@
 		add_trait = celibate
 	}
 
+	## 宮廷から離れないように
+	scope:employee = {
+		add_character_flag = {
+			flag = blocked_from_leaving
+			# years = 5
+		}
+	}
+
 	basic_gained_court_position_effect = yes
 }
 
