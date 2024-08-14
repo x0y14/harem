@@ -312,6 +312,8 @@ hrm_harem_jariya_court_position = {  # Turkish: Cariye?
 					is_imprisoned_by = scope:liege
 				}
 			}
+
+			location = scope:liege.location
 		}
 	}
 
