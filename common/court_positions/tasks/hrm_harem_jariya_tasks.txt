@@ -36,8 +36,10 @@
 
 	is_shown = {  }
 	is_valid_showing_failures_only = { 
-		scope:liege = { any_concubine = { count <= 2 } }
-		# scope:liege = { allowed_more_concubines = yes }
+		custom_tooltip = {
+			text = hrm_harem_jariya_prepare_for_the_night_desc_invalid
+			scope:liege = { any_concubine = { count < 3 } }
+		}
 	}
 
 	on_start = {

@@ -19,3 +19,4 @@
   # Jariya
   hrm_harem_jariya_prepare_for_the_night: "Prepare for the Night"
   hrm_harem_jariya_prepare_for_the_night_desc: "DESC IF $hrm_harem_jariya_prepare_for_the_night$"
+  hrm_harem_jariya_prepare_for_the_night_desc_invalid: "Too Many Spouse"
