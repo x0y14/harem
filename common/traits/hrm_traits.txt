@@ -1,0 +1,20 @@
+﻿jariya = {
+	category = fame
+
+	flag = can_not_marry
+	inheritance_blocker = all
+	claim_inheritance_blocker = all
+	# can_have_children = no
+	
+	shown_in_ruler_designer = no
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { NOT = { exists = this } }
+				desc = trait_jariya_desc
+			}
+			desc = trait_jariya_character_desc
+		}
+	}
+}

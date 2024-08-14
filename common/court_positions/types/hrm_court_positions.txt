@@ -1,0 +1,514 @@
+﻿hrm_harem_eunuch_court_position = {
+	max_available_positions = 1
+	category = court_position_category_harem
+	minimum_rank = kingdom # Should only be available for kings and emperors
+	skill = diplomacy
+
+	opinion = {
+		value = regular_court_position_opinion
+	}
+	
+	# How high the aptitude has to be to reach the 5 different modifier levels
+	aptitude_level_breakpoints = { 20 40 60 80 }
+
+	# How good is this character in this position? root scope is the holder of the court position
+	aptitude = {
+		value = 1
+		add = {
+			value = diplomacy
+			multiply = 2.5
+			max = 50
+			desc = court_position_skill_diplomacy
+		}
+		add = {
+			value = intrigue
+			multiply = 2.5
+			desc = court_position_skill_intrigue
+		}
+		if = {
+			limit = {
+				is_landed = yes
+			}
+			add = {
+				value = -20
+				desc = court_position_landed_penalty
+			}
+		}
+		if = {
+			limit = {
+				has_trait = blind
+			}
+			add = {
+				value = -50
+				desc = court_position_blind_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = infirm
+			}
+			add = {
+				value = -75
+				desc = court_position_infirm_trait
+			}
+		}
+		add = court_position_aptitude_family_business_value
+	}
+
+	# Is this an available position for this court? (root is court owner)
+	is_shown = {
+		exists = dynasty
+		dynasty = {
+			OR = {
+				has_dynasty_perk = hrm_harem_legacy_1
+				has_dynasty_perk = hrm_harem_legacy_2
+				has_dynasty_perk = hrm_harem_legacy_3
+				has_dynasty_perk = hrm_harem_legacy_4
+				has_dynasty_perk = hrm_harem_legacy_5
+			}
+		}
+	}
+	
+	valid_position = {
+		highest_held_title_tier >= tier_kingdom
+		dynasty = { has_dynasty_perk = hrm_harem_legacy_2 }
+	}
+
+	is_shown_character = {
+		scope:employee = {
+			is_courtier_of = scope:liege
+			is_imprisoned = no
+		}
+	}
+
+	valid_character = {
+		scope:employee = {
+			has_trait = eunuch
+		}
+	}
+
+	revoke_cost = {
+		prestige =  {
+			value = major_court_position_prestige_revoke_cost
+
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					exists = dynasty
+					dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+					employs_court_position = chief_eunuch_court_position
+					any_court_position_holder = {
+				        type = chief_eunuch_court_position
+						exists = dynasty
+						house = prev.house
+					}
+				}
+				multiply = 0
+			}
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
+		}
+	}
+
+	salary = {
+		round = no
+		gold = {
+			value = minor_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = chief_eunuch_court_position
+						any_court_position_holder = {
+					        type = chief_eunuch_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+			if = {
+				limit = {
+					scope:liege = {
+						employs_court_position = chief_eunuch_court_position
+						any_court_position_holder = {
+					        type = chief_eunuch_court_position
+					        scope:liege = {
+								has_hook_of_type = {
+									type = obligation_hook
+									target = prev
+								}
+							}
+						}
+					}
+				}
+				multiply = {
+					value = 0.5
+					desc = obligation_hook_salary
+				}
+			}
+		}
+	}
+
+	is_powerful_agent = yes
+
+	# These modifiers are employed based on what level the aptitude reaches (levels are defined as breakpoints) 
+	scaling_employer_modifiers = {
+		terrible = {
+			monthly_court_grandeur_change_mult = 0.05
+			hostile_scheme_resistance_mult = 0.02
+			hostile_scheme_power_mult = 0.02
+		}
+		poor = {
+			court_grandeur_baseline_add = 1
+			monthly_court_grandeur_change_mult = 0.05
+			hostile_scheme_resistance_mult = 0.04
+			hostile_scheme_power_mult = 0.04
+		}
+		average = {
+			court_grandeur_baseline_add = 1
+			monthly_court_grandeur_change_mult = 0.10
+			hostile_scheme_resistance_mult = 0.08
+			hostile_scheme_power_mult = 0.08
+		}
+		good = {
+			court_grandeur_baseline_add = 2
+			monthly_court_grandeur_change_mult = 0.10
+			hostile_scheme_resistance_mult = 0.16
+			hostile_scheme_power_mult = 0.16
+		}
+		excellent = {
+			court_grandeur_baseline_add = 2
+			monthly_court_grandeur_change_mult = 0.15
+			hostile_scheme_resistance_mult = 0.32
+			hostile_scheme_power_mult = 0.32
+		}
+	}
+
+	modifier = {
+		monthly_prestige = minor_court_position_prestige_salary
+	}
+
+	on_court_position_received = {
+		chief_eunuch_title_accepted_effect = yes
+	}
+	on_court_position_revoked = { 
+		chief_eunuch_title_revoked_effect = yes
+	}
+	on_court_position_invalidated = {
+		chief_eunuch_title_invalidated_effect = yes
+	}
+	# Scripted value to determine whether an AI will hire/fire a position or not. Hires over 0, fires under -50. Look in _court_positions.info for more extensive documentation!
+	candidate_score = {
+		value = 100
+		add = scope:base_value
+		add = court_position_candidate_score_base_value
+		add = court_position_debt_considerations_value
+	}
+}
+
+hrm_harem_jariya_court_position = {  # Turkish: Cariye?
+	max_available_positions = 5
+	category = court_position_category_harem
+	minimum_rank = kingdom # Should only be available for kings and emperors
+	skill = diplomacy
+
+	opinion = {
+		value = regular_court_position_opinion
+	}
+	
+	aptitude_level_breakpoints = { 20 40 60 80 }
+
+	aptitude = {
+		value = 25
+		add = {
+			value = diplomacy
+			multiply = 2.5
+			max = 50
+			desc = court_position_skill_diplomacy
+		}
+		if = {
+			limit = {
+				exists = dynasty
+				dynasty = { has_dynasty_perk = fp3_khvarenah_legacy_1 }
+			}
+			add = {
+				value = 10
+				desc =  court_position_khvarenah_legacy_1
+			}
+		}
+		if = {
+			limit = {
+				has_trait = gregarious
+			}
+			add = {
+				value = 40
+				desc = court_position_gregarious_trait
+			}
+		}
+		if = {
+			limit = {
+				has_trait = honest
+			}
+			add = {
+				value = 10
+				desc = court_position_honest_trait
+			}
+		}
+		add = court_position_aptitude_family_business_value
+		add = court_position_aptitude_low_penalty_value
+	}
+
+	is_shown = {
+		exists = dynasty
+		dynasty = {
+			OR = {
+				has_dynasty_perk = hrm_harem_legacy_1
+				has_dynasty_perk = hrm_harem_legacy_2
+				has_dynasty_perk = hrm_harem_legacy_3
+				has_dynasty_perk = hrm_harem_legacy_4
+				has_dynasty_perk = hrm_harem_legacy_5
+			}
+		}
+	}
+
+	valid_position = {
+		highest_held_title_tier >= tier_kingdom
+		dynasty = { has_dynasty_perk = hrm_harem_legacy_2 }
+	}
+
+	is_shown_character = {
+		scope:employee = {
+			NOR = {  # だめリスト
+				is_ai = no
+				is_close_or_extended_family_of = scope:liege
+			}
+
+			faith = {
+				faith_hostility_level = {
+					target = scope:liege.faith
+					value >= faith_hostile_level
+				}
+			}
+
+			OR = {  # 宮廷で働いてる人または逮捕されている人
+				is_courtier_of = scope:liege
+				AND = {
+					is_imprisoned = yes
+					is_imprisoned_by = scope:liege
+				}
+			}
+		}
+	}
+
+	valid_character = {
+		scope:employee = {		
+			custom_tooltip = {
+				text = IS_NOT_THE_SPOUSE_OF_CHARACTER_COURT_POSITION
+				NOT = { is_spouse_of = scope:liege }
+			}
+
+			is_ruler = no
+			is_female = yes
+			age >= 10  # ムハンマドは9歳と結婚したそうだが、とりあえず10歳で仮置き
+			age <= 30
+
+			OR = {
+				trigger_if = { # Done to hide the tooltip
+					limit = { has_court_position = hrm_harem_jariya_court_position }
+					always = yes
+				}
+				is_courtier_of = scope:liege
+				AND = {
+					is_imprisoned = yes
+					is_imprisoned_by = scope:liege
+				}
+			}
+
+			trigger_if = {
+				limit = { NOT = { has_court_position = hrm_harem_jariya_court_position } }
+				court_position_does_not_already_have_a_job_trigger = yes # This positions is considered a job, and cannot be held at the same tims as another similar position
+			}
+		}
+	}
+
+	revoke_cost = {
+		prestige =  {
+			value = major_court_position_prestige_revoke_cost
+
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					exists = dynasty
+					dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+					employs_court_position = lady_in_waiting_court_position
+					any_court_position_holder = {
+				        type = lady_in_waiting_court_position
+						exists = dynasty
+						house = prev.house
+					}
+				}
+				multiply = 0
+			}
+			if = {
+				limit = {
+					exists = this
+					is_ai = yes
+				}
+				multiply = 0
+			}
+		}
+	}
+
+	salary = {
+		round = no
+		gold = {
+			value = medium_court_position_salary
+			# Set to 0 with Dynasty Perk Inner Circle
+			if = {
+				limit = {
+					scope:liege = {
+						exists = dynasty
+						dynasty = { has_dynasty_perk = fp2_coterie_legacy_1 }
+
+						employs_court_position = lady_in_waiting_court_position
+						any_court_position_holder = {
+					        type = lady_in_waiting_court_position
+							exists = dynasty
+							house = prev.house
+						}
+					}
+				}
+				multiply = {
+					value = 0.0
+					desc = inner_circle_salary_mod
+					format = "BASE_VALUE_FORMAT_DECIMALS_MINUS_POSITIVE"
+				}
+			}
+			if = {
+				limit = {
+					scope:liege = {
+						employs_court_position = lady_in_waiting_court_position
+						any_court_position_holder = {
+					        type = lady_in_waiting_court_position
+					        scope:liege = {
+								has_hook_of_type = {
+									type = obligation_hook
+									target = prev
+								}
+							}
+						}
+					}
+				}
+				multiply = {
+					value = 0.5
+					desc = obligation_hook_salary
+				}
+			}
+		}
+	}
+
+	is_powerful_agent = yes
+
+	# These modifiers are employed based on what level the aptitude reaches (levels are defined as breakpoints) 
+	scaling_employer_modifiers = {
+		terrible = {
+			stress_loss_mult = 0.10
+			hostile_scheme_resistance_add = 1
+		}
+		poor = {
+			stress_loss_mult = 0.15
+			hostile_scheme_resistance_add = 2
+		}
+		average = {
+			stress_loss_mult = 0.15
+			hostile_scheme_resistance_add = 5
+		}
+		good = {
+			stress_loss_mult = 0.15
+			hostile_scheme_resistance_add = 7
+		}
+		excellent = {
+			stress_loss_mult = 0.20
+			hostile_scheme_resistance_add = 10
+		}
+	}
+
+	modifier = {
+		monthly_prestige = medium_court_position_prestige_salary
+	}
+
+	on_court_position_received = {
+		hrm_harem_jariya_title_accepted_effect = yes
+	}
+	on_court_position_revoked = { 
+		hrm_harem_jariya_title_revoked_effect = yes
+	}
+	on_court_position_invalidated = {
+		hrm_harem_jariya_title_invalidated_effect = yes
+	}
+	# Scripted value to determine whether an AI will hire/fire a position or not. Hires over 0, fires under -50. Look in _court_positions.info for more extensive documentation!
+	candidate_score = {
+		value = 50
+		add = scope:base_value
+		add = court_position_candidate_score_base_value 
+		add = court_position_candidate_aptitude_value
+		scope:liege = {
+			# Opinion affects how likely they are to be hired
+			if = {
+				limit = {
+					has_relation_lover = scope:employee
+				}
+				add = 100
+			}
+			else_if = {
+				limit = {
+					has_relation_friend = scope:employee
+				}
+				add = 75
+			}
+			else_if = {
+				limit = {
+					opinion = {
+						target = scope:employee
+						value >= high_positive_opinion
+					}
+				}
+				add = 50
+			}
+			else_if = {
+				limit = {
+					opinion = {
+						target = scope:employee
+						value >= medium_positive_opinion
+					}
+				}
+				add = 25
+			}
+
+			# Less likely to hire an additional one if you're already employing one
+			if = {
+				limit = {
+					employs_court_position = lady_in_waiting_court_position
+				}
+				add = -50
+			}
+		}
+		add = court_position_debt_considerations_value
+	}
+}

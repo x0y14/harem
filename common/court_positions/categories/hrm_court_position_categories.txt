@@ -1,0 +1,3 @@
+﻿court_position_category_harem = {
+	name = COURT_POSITION_CATEGORY_HAREM_NAME
+}

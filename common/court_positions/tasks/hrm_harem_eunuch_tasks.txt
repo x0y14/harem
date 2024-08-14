@@ -1,0 +1,94 @@
+﻿hrm_harem_eunuch_gather_jawari = {
+	court_position_types = { hrm_harem_eunuch_court_position }
+
+	cost = {
+		round = no
+		gold = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+	}
+
+	employee_modifier = {
+		monthly_prestige = minor_court_position_task_prestige_salary
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+		 	epidemic_resistance = 3
+		}
+		poor = {
+		 	epidemic_resistance = 6
+		}
+		average = {
+		 	epidemic_resistance = 10
+		}
+		good = {
+		 	epidemic_resistance = 15
+		}
+		excellent = {
+		 	epidemic_resistance = 20
+		}
+	}
+
+	is_shown = {  }
+	is_valid_showing_failures_only = { }
+
+	on_start = { }
+	on_end = { }
+
+	ai_will_do = {
+		value = 30
+	}
+}
+
+hrm_harem_eunuch_educate_jawari = {
+	court_position_types = { hrm_harem_eunuch_court_position }
+
+	cost = {
+		round = no
+		gold = {
+			add = {
+				value = monthly_court_position_task_cost
+				desc = COURT_POSITION_TASK_COST_BREAKDOWN_BASE
+				format = "BASE_VALUE_FORMAT_DECIMALS_PLUS_NEGATIVE"
+			}
+		}
+	}
+
+	employee_modifier = {
+		monthly_prestige = minor_court_position_task_prestige_salary
+	}
+
+	scaling_employer_modifiers = {
+		terrible = {
+		 	epidemic_resistance = 3
+		}
+		poor = {
+		 	epidemic_resistance = 6
+		}
+		average = {
+		 	epidemic_resistance = 10
+		}
+		good = {
+		 	epidemic_resistance = 15
+		}
+		excellent = {
+		 	epidemic_resistance = 20
+		}
+	}
+
+	is_shown = {  }
+	is_valid_showing_failures_only = { }
+
+	on_start = { }
+	on_yearly = { }
+	on_end = { }
+
+	ai_will_do = {
+		value = 30
+	}
+}

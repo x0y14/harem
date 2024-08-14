@@ -1,0 +1,21 @@
+﻿l_english:
+  ## POSITION CATEGORY
+  COURT_POSITION_CATEGORY_HAREM_NAME:0 "Harem"
+
+  ## POSITION NAME
+  # Eunuch
+  hrm_harem_eunuch_court_position:1 "Harem Eunuch"
+  hrm_harem_eunuch_court_position_desc:1 "DESC OF $hrm_harem_eunuch_court_position$"
+  # Jariya
+  hrm_harem_jariya_court_position:1 "Harem Jariya"
+  hrm_harem_jariya_court_position_desc:1 "DESC OF $hrm_harem_jariya_court_position$"
+
+  ## POSITION TASK
+  # Eunuch
+  hrm_harem_eunuch_gather_jawari: "Gather Jawari"
+  hrm_harem_eunuch_gather_jawari_desc: "DESC OF $hrm_harem_eunuch_gather_jawari$"
+  hrm_harem_eunuch_educate_jawari: "Educate Jawari"
+  hrm_harem_eunuch_educate_jawari_desc: "DESC OF $hrm_harem_eunuch_educate_jawari$"
+  # Jariya
+  hrm_harem_jariya_prepare_for_the_night: "Prepare for the Night"
+  hrm_harem_jariya_prepare_for_the_night_desc: "DESC IF $hrm_harem_jariya_prepare_for_the_night$"

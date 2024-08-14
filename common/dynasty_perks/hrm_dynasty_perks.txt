@@ -1,0 +1,25 @@
+﻿hrm_harem_legacy_1 = {  # バザールの解禁、良いトレイトを持った子を集められるように
+	legacy = hrm_harem_legacy_track
+
+	ai_chance = {
+		value = 0
+		if = {
+			limit = {
+				can_start_new_legacy_track_trigger = no
+			}
+			multiply = 0
+		}
+	}
+}
+hrm_harem_legacy_2 = {  # 宦官を雇用可能、側室としての役職を解禁
+	legacy = hrm_harem_legacy_track
+}
+hrm_harem_legacy_3 = {  # ハレム解禁
+	legacy = hrm_harem_legacy_track
+}
+hrm_harem_legacy_4 = {  # ハレムの整備(宮廷のように、教育、華やかさなどどこにお金をつぎ込むかを選べるように)
+	legacy = hrm_harem_legacy_track
+}
+hrm_harem_legacy_5 = {  # 後継者指名に関する法律の解禁
+	legacy = hrm_harem_legacy_track
+}
