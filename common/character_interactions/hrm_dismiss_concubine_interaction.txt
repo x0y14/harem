@@ -11,6 +11,15 @@
 
 	is_valid_showing_failures_only = {
 		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+		####
+		custom_tooltip = {
+			text = hrm_dismiss_concubine_interaction_cant_dismiss_concubine_jariya_err_tt
+			NAND = {
+				scope:recipient = { has_court_position = hrm_harem_jariya_court_position }
+				scope:recipient = { is_courtier_of = scope:actor }
+			}
+		}
+		####
 	}
 
 	auto_accept = yes
