@@ -40,6 +40,7 @@
 			text = hrm_harem_jariya_prepare_for_the_night_desc_invalid
 			scope:liege = { any_concubine = { count < 3 } }
 		}
+		age >= 16  # 成人未満と行為させることはシステム上無理なのでエラー回避のためチェック
 	}
 
 	on_start = {
