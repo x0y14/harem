@@ -1,0 +1,85 @@
+﻿dismiss_concubine_interaction = {
+	category = interaction_category_diplomacy
+	use_diplomatic_range = no	
+	icon = concubine_icon
+	
+	is_shown = {
+		scope:recipient = {
+			is_concubine_of = scope:actor
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:recipient = { NOT = { has_strong_hook = scope:actor } }
+	}
+
+	auto_accept = yes
+	
+	on_accept = {
+		scope:actor = {
+			stress_impact = {
+				compassionate = minor_stress_impact_gain
+			}
+			hidden_effect = {
+				send_interface_toast = {
+					type = event_generic_neutral
+					title = msg_concubine_dismissed_title
+					right_icon = scope:recipient
+					remove_concubine = scope:recipient
+				}
+			}
+		}
+		
+		scope:recipient = {
+		# No point in sending a notification since the player can't be an unlanded concubine in any case
+		#	trigger_event = marriage_interaction.0050
+
+			# Being thrown aside is humiliating, even if you didn't want to be a concubine in the first place.
+			add_opinion = {
+				modifier = set_me_aside_opinion
+				target = scope:actor
+			}
+
+			# Figure out where we should go now that we're no longer a concubine.
+			if = {
+				limit = {
+					is_councillor_of = scope:actor
+				}
+				# Then they should remain in court
+			}
+			else_if = { #Dismiss to relevant court, or to pool
+				limit = {
+					any_close_family_member = {
+						is_landed = yes
+					}
+				}
+				random_close_family_member = {
+					limit = {
+						is_child_of = scope:recipient
+						is_landed = yes
+					}
+					alternative_limit = {
+						is_parent_of = scope:recipient
+						is_landed = yes
+					}
+					alternative_limit = {
+						is_landed = yes
+					}
+					add_courtier = scope:recipient
+				}
+			}
+			else = {
+				move_to_pool = yes
+			}
+		}
+
+		# If we're a clan this interaction affects unity
+		add_clan_unity_interaction_effect = {
+			CHARACTER = scope:actor
+			TARGET = scope:recipient
+			VALUE = medium_unity_loss
+			DESC = clan_unity_concubinage_dismissal.desc
+			REVERSE_NON_HOUSE_TARGET = no
+		}
+	}
+}
