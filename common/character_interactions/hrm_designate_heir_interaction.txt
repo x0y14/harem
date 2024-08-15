@@ -1,4 +1,10 @@
-﻿designate_heir_interaction = {
+﻿@designate_heir_cost = 1000
+# Set one of your children as heir
+
+
+
+#This interaction is referenced in code! If it's renamed you have to ping a coder
+designate_heir_interaction = {
 	icon = heir
 
 	category = interaction_category_diplomacy
