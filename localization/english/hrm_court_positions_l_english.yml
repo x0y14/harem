@@ -2,10 +2,14 @@
   ## POSITION CATEGORY
   COURT_POSITION_CATEGORY_HAREM_NAME:0 "Harem"
 
-  ## POSITION NAME
+  ## POSITION
   # Eunuch
   hrm_harem_eunuch_court_position:1 "Harem Eunuch"
   hrm_harem_eunuch_court_position_desc:1 "DESC OF $hrm_harem_eunuch_court_position$"
+  find_harem_eunuch_desicion:0 "Search for $hrm_harem_eunuch_court_position$"
+  find_harem_eunuch_desicion_effect_tooltip:0 "DESC OF $find_harem_eunuch_desicion$ EFFECT" # TODO
+  find_harem_eunuch_desicion_desc:0 "DESC OF $find_harem_eunuch_desicion$" # TODO
+  find_harem_eunuch_desicion_confirm:0 "Start the search"
   # Jariya
   hrm_harem_jariya_court_position:1 "Harem Jariya"
   hrm_harem_jariya_court_position_desc:1 "DESC OF $hrm_harem_jariya_court_position$"

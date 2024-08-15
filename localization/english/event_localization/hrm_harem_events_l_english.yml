@@ -1,0 +1,12 @@
+﻿l_english:
+  harem_event_prefix:0 "Harem:"
+
+  hrm_harem_eunuch_events.0001.t:1 "$harem_event_prefix$ [GetCourtPositionType('hrm_harem_eunuch_court_position').GetNameNoTooltip()]"
+  hrm_harem_eunuch_events.0001.desc:0 "DESC OF $hrm_harem_eunuch_events.0001.t$" # TODO
+
+  hrm_harem_eunuch_events.0001.a:1 "[great_harem_eunuch_option.GetNameNoTooltip] is a fine choice."
+  hrm_harem_eunuch_events.0001.b:1 "[good_harem_eunuch_option.GetNameNoTooltip] will do."
+  hrm_harem_eunuch_events.0001.c:0 "None of these choices are adequate."
+
+  hrm_harem_eunuch_events.0001.a.aptitude:0 "[great_harem_eunuch_option.GetFirstNamePossessiveNoTooltip] [aptitude|E] is [great_harem_eunuch_option.GetCourtPositionAptitude( GetCourtPositionType( 'hrm_harem_eunuch_court_position' ) )]"
+  hrm_harem_eunuch_events.0001.b.aptitude:0 "[good_harem_eunuch_option.GetFirstNamePossessiveNoTooltip] [aptitude|E] is [good_harem_eunuch_option.GetCourtPositionAptitude( GetCourtPositionType( 'hrm_harem_eunuch_court_position' ) )]"

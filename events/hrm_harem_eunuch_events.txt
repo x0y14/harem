@@ -1,0 +1,258 @@
+﻿namespace = hrm_harem_eunuch_events
+
+# TODO: バザールに対応する。例えば宦官は奴隷から選出されることが多いので、統治者と同じ文化を持つことは稀。
+
+scripted_trigger good_harem_eunuch_trigger = {
+	is_adult = yes
+	is_imprisoned = no
+	is_male = yes
+	has_trait = eunuch
+	# TODO
+}
+
+scripted_trigger great_harem_eunuch_trigger = {
+	is_adult = yes
+	is_imprisoned = no
+	is_male = yes
+	has_trait = eunuch
+	# TODO
+}
+
+scripted_effect initialize_good_harem_eunuch_effect = {
+	hidden_effect = {
+		add_trait = eunuch
+		# if = {
+		# 	limit = { NOT = { has_trait = lifestyle_traveler } }
+		# 	add_trait = lifestyle_traveler
+		# }
+		# add_trait_xp = {
+		# 	trait = lifestyle_traveler
+		# 	track = travel 
+		# 	value = { 0 10 }
+		# }
+		# add_trait_xp = {
+		# 	trait = lifestyle_traveler
+		# 	track = danger 
+		# 	value = { 0 10 }
+		# }
+	}
+}
+
+scripted_effect initialize_great_harem_eunuch_effect = {
+	hidden_effect = {
+		add_trait = eunuch
+		# if = {
+		# 	limit = { NOT = { has_trait = lifestyle_traveler } }
+		# 	add_trait = lifestyle_traveler
+		# }
+		# add_trait_xp = {
+		# 	trait = lifestyle_traveler
+		# 	track = travel 
+		# 	value = { 10 20 } 
+		# }
+		# add_trait_xp = {
+		# 	trait = lifestyle_traveler
+		# 	track = danger 
+		# 	value = { 10 20 } 
+		# }
+	}
+}
+
+# Find a harem eunuch
+hrm_harem_eunuch_events.0001 = {
+	type = character_event
+	title = hrm_harem_eunuch_events.0001.t
+	desc = hrm_harem_eunuch_events.0001.desc
+	theme = stewardship
+	left_portrait = {
+		character = scope:good_harem_eunuch_option 
+		animation = chancellor
+	}
+	right_portrait = {
+		character = scope:great_harem_eunuch_option
+		animation = steward
+	}
+	trigger = {
+		exists = capital_province 
+	}
+	immediate = {
+		# Good Character
+		if = { # check for a GOOD character in the pool
+			limit = {
+				any_pool_character = {
+					province = root.capital_province
+					good_harem_eunuch_trigger = yes
+					can_be_employed_as = hrm_harem_eunuch_court_position
+				}
+			}
+			random_pool_character = {
+				province = root.capital_province
+				limit = {
+					good_harem_eunuch_trigger = yes
+					can_be_employed_as = hrm_harem_eunuch_court_position
+				}
+				save_scope_as = good_harem_eunuch_option
+				initialize_good_harem_eunuch_effect = yes
+			}
+		}
+		else = { # otherwise create one
+			create_character = {
+				location = root.capital_province
+				gender_female_chance = 0
+				template_character = root
+				random_traits = yes
+				age = { 16 32 }
+				martial = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				stewardship = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				diplomacy = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				intrigue = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				learning = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				save_scope_as = good_harem_eunuch_option
+			}
+			scope:good_harem_eunuch_option = {
+				# Add travel trait and randomized experience to both tracks
+				initialize_good_harem_eunuch_effect = yes
+			}
+		}
+		# Great Character
+		if = { # check for a GREAT character in the pool
+			limit = {
+				any_pool_character = {
+					province = root.capital_province
+					great_harem_eunuch_trigger = yes
+					NOT = { this = scope:good_harem_eunuch_option }
+					can_be_employed_as = hrm_harem_eunuch_court_position
+				}
+			}
+			random_pool_character = {
+				province = root.capital_province
+				limit = {
+					great_harem_eunuch_trigger = yes
+					NOT = { this = scope:good_harem_eunuch_option }
+					can_be_employed_as = hrm_harem_eunuch_court_position
+				}
+				save_scope_as = great_harem_eunuch_option
+				initialize_great_harem_eunuch_effect = yes
+			}
+		}
+		else = { # otherwise create one
+			create_character = {
+				location = root.capital_province
+				gender_female_chance = 0
+				template_character = root
+				random_traits = yes
+				age = { 16 32 }
+				martial = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				stewardship = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				diplomacy = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				intrigue = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				learning = {
+					min_template_low_skill
+					max_template_average_skill
+				}
+				save_scope_as = great_harem_eunuch_option
+			}
+			scope:great_harem_eunuch_option = {
+				# Add travel trait and randomized experience to both tracks
+				initialize_great_harem_eunuch_effect = yes
+			}
+		}
+	}
+	# Great option
+	option = {
+		name = hrm_harem_eunuch_events.0001.a
+		custom_tooltip = hrm_harem_eunuch_events.0001.a.aptitude
+		pay_short_term_gold = {
+			target = scope:great_harem_eunuch_option
+			gold = high_skill_court_physician_cost
+		}
+		add_courtier = scope:great_harem_eunuch_option
+		if = { # 新規で雇う
+			limit = {
+				can_employ_court_position_type = hrm_harem_eunuch_court_position
+			}
+			appoint_court_position = {
+				recipient = scope:great_harem_eunuch_option
+				court_position = hrm_harem_eunuch_court_position
+			}
+		}
+		else_if = { # 置き換え
+			limit = {
+				employs_court_position = hrm_harem_eunuch_court_position
+			}
+			random_court_position_holder = {
+				type = hrm_harem_eunuch_court_position
+				save_scope_as = current_harem_eunuch
+			}
+			replace_court_position = {
+				recipient = scope:great_harem_eunuch_option
+				holder = scope:current_harem_eunuch
+				court_position = hrm_harem_eunuch_court_position
+			}
+		}
+	}
+	# Good option
+	option = {
+		name = hrm_harem_eunuch_events.0001.b
+		custom_tooltip = hrm_harem_eunuch_events.0001.b.aptitude
+		pay_short_term_gold = {
+			target = scope:good_harem_eunuch_option
+			gold = low_skill_court_physician_cost
+		}
+		add_courtier = scope:good_harem_eunuch_option
+		if = { # 新規で雇う
+			limit = {
+				can_employ_court_position_type = hrm_harem_eunuch_court_position
+			}
+			appoint_court_position = {
+				recipient = scope:good_harem_eunuch_option
+				court_position = hrm_harem_eunuch_court_position
+			}
+		}
+		else_if = { # 置き換え
+			limit = {
+				employs_court_position = hrm_harem_eunuch_court_position
+			}
+			random_court_position_holder = {
+				type = hrm_harem_eunuch_court_position
+				save_scope_as = current_harem_eunuch
+			}
+			replace_court_position = {
+				recipient = scope:good_harem_eunuch_option
+				holder = scope:current_harem_eunuch
+				court_position = hrm_harem_eunuch_court_position
+			}
+		}
+	}
+	# Nah
+	option = {
+		name = hrm_harem_eunuch_events.0001.c
+	}
+}

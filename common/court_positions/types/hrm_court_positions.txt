@@ -203,6 +203,18 @@
 		monthly_prestige = minor_court_position_prestige_salary
 	}
 
+	search_for_courtier = {
+		send_interface_toast = {
+			title = find_harem_eunuch_desicion
+			custom_tooltip = find_harem_eunuch_desicion_effect_tooltip
+		}
+
+		trigger_event = {
+			id = hrm_harem_eunuch_events.0001
+			days = 7
+		}
+	}
+
 	on_court_position_received = {
 		chief_eunuch_title_accepted_effect = yes
 	}

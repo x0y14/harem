@@ -1,0 +1,52 @@
+﻿find_harem_eunuch_desicion = {
+	picture = "gfx/interface/illustrations/decisions/bp2_playdate.dds"
+	
+	sort_order = 81
+
+	desc = find_harem_eunuch_desicion_desc
+	selection_tooltip = find_harem_eunuch_desicion_effect_tooltip
+
+	ai_check_interval = 60
+
+	is_shown = {
+		is_landed = yes
+		exists = primary_title 
+		primary_title.tier >= tier_kingdom
+
+		exists = dynasty
+		dynasty = {
+			OR = {
+				has_dynasty_perk = hrm_harem_legacy_1
+				has_dynasty_perk = hrm_harem_legacy_2
+				has_dynasty_perk = hrm_harem_legacy_3
+				has_dynasty_perk = hrm_harem_legacy_4
+				has_dynasty_perk = hrm_harem_legacy_5
+			}
+		}
+		NOT = { employs_court_position = hrm_harem_eunuch_court_position }
+	}
+
+	cooldown = { days = 365 }
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+	}
+
+	effect = {
+		trigger_event = {
+			id = hrm_harem_eunuch_events.0001
+			days = { 7 14 }
+		}
+		custom_tooltip = find_harem_eunuch_desicion_effect_tooltip
+	}
+	
+	ai_potential = {
+		highest_held_title_tier > tier_barony
+		# TODO
+	}
+
+	ai_will_do = {
+		base = 100
+		# TODO
+	}
+}
