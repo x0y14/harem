@@ -1,0 +1,65 @@
+﻿hrm_bazaar_01 = {
+	construction_time = slow_construction_time
+	effect_desc = bazaar_effect_desc
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+
+		scope:holder = {
+			exists = dynasty
+			dynasty = {
+				OR = {
+					has_dynasty_perk = hrm_harem_legacy_1
+					has_dynasty_perk = hrm_harem_legacy_2
+					has_dynasty_perk = hrm_harem_legacy_3
+					has_dynasty_perk = hrm_harem_legacy_4
+					has_dynasty_perk = hrm_harem_legacy_5
+				}
+			}
+		}
+	}
+
+	can_construct_showing_failures_only = {
+		culture = {
+			has_innovation = innovation_manorialism # 荘苑主義..?
+		}
+	}
+
+	is_enabled = {
+		county.holder = { has_title = prev.duchy }
+	}
+	show_disabled = yes
+
+	cost_gold = expensive_building_tier_3_cost
+
+	character_modifier = {
+		monthly_piety = 0.3
+		court_grandeur_baseline_add = 2
+		owned_legend_spread_mult = 0.2
+		legitimacy_gain_mult = 0.1
+	}
+	duchy_capital_county_modifier = {
+		monthly_county_control_growth_factor = 0.1
+		county_opinion_add = 5
+		epidemic_resistance = 20
+	}
+
+	# next_building = burial_site_02
+
+	type_icon = "icon_building_bazaar.dds"
+
+	type = duchy_capital
+
+	ai_value = {
+		base = 20
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+		modifier = { # Fill all building slots before going for duchy buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}

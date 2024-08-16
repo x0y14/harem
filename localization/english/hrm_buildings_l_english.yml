@@ -1,0 +1,8 @@
+﻿l_english:
+  building_type_hrm_bazaar_01:1 "Bazaar"
+  building_type_hrm_bazaar_01_desc:1 "DESC OF $building_type_hrm_bazaar_01$"
+
+  building_hrm_bazaar_01:1 "$building_type_hrm_bazaar_01$"
+  building_hrm_bazaar_01_desc:1 "$building_type_hrm_bazaar_01_desc$"
+
+  bazaar_effect_desc:1 "EFFECT OF $building_type_hrm_bazaar_01$"
